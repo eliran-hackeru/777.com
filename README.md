@@ -5,7 +5,7 @@ Automation Framework for 777.com for the language menu.
 
 ---
 
-#In this project there are 4 test cases:
+# In this project there are 4 test cases:
 1) EnglishTest - Change the language to English.
 2) DeutschTest - Change the language to Deutsch.
 3) SuomiTest - Change the language to Suomi.
@@ -18,6 +18,6 @@ Reports can be found at:
 
 ---
 
-##License & Copyright
+## License & Copyright
 
 Ⓒ Eliran Duveen
