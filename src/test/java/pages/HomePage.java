@@ -20,7 +20,7 @@ public class HomePage {
 	
 	@FindBy (css = "a[onclick*='Languages-']") List<WebElement> langList;
 	
-	WebElement english;//Originally by linkText
+	WebElement english;
 	
 	WebElement deutsch;
 	
