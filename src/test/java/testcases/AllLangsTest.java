@@ -14,7 +14,7 @@ import utility.Helper;
 * Print to extent report all the languages.
 * The report is located at: /test-output/Report_ + yyyy-mm-dd +.html
 */
-public class E2ETest extends TestBaseClass {
+public class AllLangsTest extends TestBaseClass {
 
 	@Test(priority = 0)
 	public void PrintAllLanguagesApp() {
