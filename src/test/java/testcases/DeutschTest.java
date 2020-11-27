@@ -23,16 +23,16 @@ public class DeutschTest extends TestBaseClass {
 		homePage.mouseoverLang();
 
 		Helper.captureScreenshot(driver, testName, "02_MouseOver_Menu_Button");
-		
+
 		homePage.mouseoverLang("Deutsch");
-		
+
 		Helper.captureScreenshot(driver, testName, "03_Select_Deutsch");
 
 		homePage.changeLang("Deutsch");
-		
+
 		Helper.captureScreenshot(driver, testName, "04_Deutsch_Homepage");
-		
+
 		homePage.assertDeutsch();
-		
+
 	}
 }

@@ -23,16 +23,16 @@ public class EnglishTest extends TestBaseClass {
 		homePage.mouseoverLang();
 
 		Helper.captureScreenshot(driver, testName, "02_MouseOver_Menu_Button");
-		
+
 		homePage.mouseoverLang("English");
-		
+
 		Helper.captureScreenshot(driver, testName, "03_Select_English");
 
 		homePage.changeLang("English");
-		
+
 		Helper.captureScreenshot(driver, testName, "Homepage");
-		
+
 		homePage.assertEnglish();
-		
+
 	}
 }

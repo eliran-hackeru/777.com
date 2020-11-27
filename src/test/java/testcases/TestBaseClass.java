@@ -23,79 +23,74 @@ import utility.ExcelDataProvider;
 import utility.Helper;
 
 public class TestBaseClass {
-	
+
 	public WebDriver driver;
 	public ExcelDataProvider excel;
 	public ConfigDataProvider config;
 	public ExtentHtmlReporter htmlReporter;
 	public ExtentReports extent;
 	public ExtentTest extentTest;
-	
+
 	@BeforeSuite
-	public void setUpSuite() 
-	{
+	public void setUpSuite() {
 		excel = new ExcelDataProvider();
 		config = new ConfigDataProvider();
 	}
-	
+
 	@BeforeClass
-	public void setupApplication()
-	{
+	public void setupApplication() {
 		driver = BrowserFactory.startApplication(driver, config.getBrowser(), config.getStagingURL());
 	}
-	
+
 	@BeforeTest
-	public void seExtent()
-	{
-		htmlReporter = new ExtentHtmlReporter("./test-output/Report_"+Helper.getCurrentDateTime()+".html");//Location of the report
-		
+	public void seExtent() {
+		htmlReporter = new ExtentHtmlReporter("./test-output/Report_" + Helper.getCurrentDateTime() + ".html");// Location
+																												// of
+																												// the
+																												// report
+
 		htmlReporter.config().setDocumentTitle("Automation Report");// Title of the report
 		htmlReporter.config().setReportName("Functional Report");// Name of the report
 		htmlReporter.config().setTheme(Theme.DARK);
-		
+
 		extent = new ExtentReports();
-		
+
 		extent.attachReporter(htmlReporter);
-		
+
 		extent.setSystemInfo("Hostname", "LocalHost");
 		extent.setSystemInfo("OS", "Windows10");
 		extent.setSystemInfo("Tester Name", "Eliran Duveen");
 		extent.setSystemInfo("Browser", "Chrome");
 	}
-	
+
 	@AfterClass
-	public void tearDown()
-	{
+	public void tearDown() {
 		BrowserFactory.quitBrowser(driver);
 	}
-	
+
 	@AfterTest
-	public void endReport()
-	{
+	public void endReport() {
 		extent.flush();
 	}
-	
+
 	@AfterMethod
-	public void tearDownMethod(ITestResult result) throws IOException
-	{
-		
-		if (result.getStatus() == ITestResult.FAILURE)
-		{
-			Helper.captureScreenshot(driver,this.getClass().getSimpleName(),"Failure");
-			
+	public void tearDownMethod(ITestResult result) throws IOException {
+
+		if (result.getStatus() == ITestResult.FAILURE) {
+			Helper.captureScreenshot(driver, this.getClass().getSimpleName(), "Failure");
+
 			extentTest.log(Status.FAIL, "Test Case FAILED Is " + result.getName());// To add name in extent report
-			extentTest.log(Status.FAIL, "Test Case FAILED Is " + result.getThrowable());// To add error/exception in extent report
-			
+			extentTest.log(Status.FAIL, "Test Case FAILED Is " + result.getThrowable());// To add error/exception in
+																						// extent report
+
 			extentTest.addScreenCaptureFromPath("./Screenshots/");
 		}
-		
-		else if (result.getStatus() ==  ITestResult.SKIP)
-		{
+
+		else if (result.getStatus() == ITestResult.SKIP) {
 			extentTest.log(Status.SKIP, "Test Case SKIPPED Is " + result.getName());
 		}
-		
-		else if (result.getStatus() ==  ITestResult.SUCCESS)
-		{
+
+		else if (result.getStatus() == ITestResult.SUCCESS) {
 			extentTest.log(Status.PASS, "Test Case PASSED Is " + result.getName());
 		}
 	}

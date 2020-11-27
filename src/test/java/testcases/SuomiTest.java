@@ -23,16 +23,16 @@ public class SuomiTest extends TestBaseClass {
 		homePage.mouseoverLang();
 
 		Helper.captureScreenshot(driver, testName, "02_MouseOver_Menu_Button");
-		
+
 		homePage.mouseoverLang("Suomi");
-		
+
 		Helper.captureScreenshot(driver, testName, "03_Select_Suomi");
 
 		homePage.changeLang("Suomi");
-		
+
 		Helper.captureScreenshot(driver, testName, "04_Suomi_Homepage");
-		
+
 		homePage.assertSuomi();
-		
+
 	}
 }

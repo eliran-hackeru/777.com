@@ -31,15 +31,15 @@ public class AllLangsTest extends TestBaseClass {
 		homePage.mouseoverLang();
 
 		Helper.captureScreenshot(driver, testName, "02_MouseOver_Menu_Button");
-		
+
 		extentTest.createNode(homePage.printLangsSize());
-		
+
 		extentTest.createNode(homePage.printAllLangs());
-		
+
 		System.out.println(homePage.printLangsSize());
-		
+
 		System.out.println(homePage.printAllLangs());
-		
+
 		homePage.assertAllLanguages();
 	}
 
@@ -64,7 +64,7 @@ public class AllLangsTest extends TestBaseClass {
 		Helper.captureScreenshot(driver, testName, "03_Select_Deutsch");
 
 		homePage.changeLang("Deutsch");
-		
+
 		Helper.captureScreenshot(driver, testName, "04_Deutsch_Homepage");
 
 		homePage.assertDeutsch();
