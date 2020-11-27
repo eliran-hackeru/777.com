@@ -5,12 +5,13 @@
     <classes>
       <class name="testcases.E2ETest">
         <methods>
-          <include name="DeutschApp"/>
           <include name="setUpSuite"/>
           <include name="seExtent"/>
           <include name="endReport"/>
           <include name="tearDown"/>
           <include name="tearDownMethod"/>
+          <include name="EnglishApp"/>
+          <include name="SuomiApp"/>
           <include name="setupApplication"/>
         </methods>
       </class> <!-- testcases.E2ETest -->

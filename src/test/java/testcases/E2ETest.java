@@ -12,7 +12,7 @@ import utility.Helper;
 /*
 * Contains all the test cases in one flow.
 * Print to extent report all the languages.
-* The report is located at: /test-output/myReport.html
+* The report is located at: /test-output/Report_ + yyyy-mm-dd +.html
 */
 public class E2ETest extends TestBaseClass {
 
