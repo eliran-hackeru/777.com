@@ -12,7 +12,7 @@ import utility.Helper;
 /*
 * Contains all the test cases in one flow.
 * Print to extent report all the languages.
-* The report is located at: /test-output/Report_ + yyyy-mm-dd +.html
+* The report is located at: /test-output/Report_ + yyyy-mm-dd + .html
 */
 public class AllLangsTest extends TestBaseClass {
 
@@ -23,6 +23,8 @@ public class AllLangsTest extends TestBaseClass {
 		extentTest = extent.createTest(testName);
 
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+		
+		System.out.println("Starting: "+testName);
 
 		homePage.assertTitle();
 
@@ -41,6 +43,8 @@ public class AllLangsTest extends TestBaseClass {
 		System.out.println(homePage.getAllLangs());
 
 		homePage.assertAllLanguages();
+		
+		System.out.println("Ending: "+testName +"\n");
 	}
 
 	@Test(priority = 1)
@@ -50,6 +54,8 @@ public class AllLangsTest extends TestBaseClass {
 		extentTest = extent.createTest(testName);
 
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+		
+		System.out.println("Starting: "+testName);
 
 		homePage.assertTitle();
 
@@ -68,6 +74,8 @@ public class AllLangsTest extends TestBaseClass {
 		Helper.captureScreenshot(driver, testName, "04_Deutsch_Homepage");
 
 		homePage.assertDeutsch();
+		
+		System.out.println("Ending: "+testName +"\n");
 
 	}
 
@@ -78,6 +86,8 @@ public class AllLangsTest extends TestBaseClass {
 		extentTest = extent.createTest(testName);
 
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+		
+		System.out.println("Starting: "+testName);
 
 		homePage.assertTitle();
 
@@ -96,6 +106,8 @@ public class AllLangsTest extends TestBaseClass {
 		Helper.captureScreenshot(driver, testName, "04_Suomi_Homepage");
 
 		homePage.assertSuomi();
+		
+		System.out.println("Ending: "+testName +"\n");
 
 	}
 
@@ -106,6 +118,8 @@ public class AllLangsTest extends TestBaseClass {
 		extentTest = extent.createTest(testName);
 
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+		
+		System.out.println("Starting: "+testName);
 
 		homePage.assertTitle();
 
@@ -124,6 +138,8 @@ public class AllLangsTest extends TestBaseClass {
 		Helper.captureScreenshot(driver, testName, "Homepage");
 
 		homePage.assertEnglish();
+		
+		System.out.println("Ending: "+testName +"\n");
 
 	}
 }

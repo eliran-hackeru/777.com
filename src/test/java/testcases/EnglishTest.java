@@ -15,6 +15,8 @@ public class EnglishTest extends TestBaseClass {
 		extentTest = extent.createTest(testName);
 
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+		
+		System.out.println("Starting: "+testName);
 
 		homePage.assertTitle();
 
@@ -33,6 +35,8 @@ public class EnglishTest extends TestBaseClass {
 		Helper.captureScreenshot(driver, testName, "Homepage");
 
 		homePage.assertEnglish();
+		
+		System.out.println("Ending: "+testName +"\n");
 
 	}
 }

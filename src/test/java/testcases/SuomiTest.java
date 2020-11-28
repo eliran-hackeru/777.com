@@ -15,6 +15,8 @@ public class SuomiTest extends TestBaseClass {
 		extentTest = extent.createTest(testName);
 
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+		
+		System.out.println("Starting: "+testName);
 
 		homePage.assertTitle();
 
@@ -33,6 +35,8 @@ public class SuomiTest extends TestBaseClass {
 		Helper.captureScreenshot(driver, testName, "04_Suomi_Homepage");
 
 		homePage.assertSuomi();
+		
+		System.out.println("Ending: "+testName +"\n");
 
 	}
 }
