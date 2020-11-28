@@ -32,13 +32,13 @@ public class AllLangsTest extends TestBaseClass {
 
 		Helper.captureScreenshot(driver, testName, "02_MouseOver_Menu_Button");
 
-		extentTest.createNode(homePage.printLangsSize());
+		extentTest.createNode(homePage.getLangsSize());
 
-		extentTest.createNode(homePage.printAllLangs());
+		extentTest.createNode(homePage.getAllLangs());
 
-		System.out.println(homePage.printLangsSize());
+		System.out.println(homePage.getLangsSize());
 
-		System.out.println(homePage.printAllLangs());
+		System.out.println(homePage.getAllLangs());
 
 		homePage.assertAllLanguages();
 	}

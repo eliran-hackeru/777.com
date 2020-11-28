@@ -33,20 +33,20 @@ public class HomePage {
 		actions.moveToElement(langBUtton).perform();
 	}
 	
-	//To print the languages menu size
+	//To get the languages menu size
 		public void printLangSize()
 		{
 			System.out.println(langList.size());
 		}
 		
-	//To print the amount of languages 
-	public String printLangsSize()
+	//To get the amount of languages 
+	public String getLangsSize()
 	{
 		return "There are "+langList.size()+" languages:\n";
 	}
 	
-	//To print all the different languages
-	public String printAllLangs()
+	//To get all the different languages
+	public String getAllLangs()
 	{	
 		String languages ="";
 		for (int i=0; i<langList.size(); i++)
